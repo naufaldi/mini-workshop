@@ -1,5 +1,5 @@
-import { Box } from '@chakra-ui/react';
-import Head from 'next/head';
+import { Box } from '@chakra-ui/react'
+import Head from 'next/head'
 
 export default function Home() {
   return (
@@ -18,5 +18,5 @@ export default function Home() {
         </Box>
       </main>
     </>
-  );
+  )
 }
