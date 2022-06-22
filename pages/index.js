@@ -1,7 +1,20 @@
-import { Box } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  HStack,
+  Image,
+  Text,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import Head from 'next/head'
+import Card from '../components/Card'
+import Heading from '../components/Heading'
 
 export default function Home() {
+  // toggle dark mode
+  const { colorMode, toggleColorMode } = useColorMode()
+  const bgColor = useColorModeValue('green', 'gray.700')
   return (
     <>
       <Head>
@@ -10,11 +23,102 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Box d="flex" justifyContent={'end'}>
+          <Button onClick={toggleColorMode}>
+            Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+          </Button>
+        </Box>
         <Box display={'flex'} flexDirection={'column'}>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint
           repudiandae aperiam nobis nemo, esse dolores obcaecati nulla! Quod
           ratione, maxime tenetur ipsam quo, soluta ab nisi aut debitis,
           pariatur officiis.
+        </Box>
+        {/* Easily customizable
+         */}
+        <Button
+          bg="blue.300"
+          color="white"
+          _hover={{ bg: 'blue.500' }}
+          _active={{ bg: 'blue.700' }}
+          _focus={{ outline: 'none' }}
+          padding={4}
+        >
+          Halo
+        </Button>
+        <HStack>
+          <Button colorScheme="facebook">Facebook</Button>
+          <Button colorScheme="twitter">Twitter</Button>
+          <Text
+            fontSize="3xl"
+            fontWeight="semibold"
+            color="blue.800"
+            lineHeight={'1.5'}
+          >
+            (3xl) In love with React & Next
+          </Text>
+        </HStack>
+        {/* Style Props */}
+        <Box
+          maxWidth={'500px'}
+          margin={'auto'}
+          padding={'2rem'}
+          backgroundColor={'blue.100'}
+          borderRadius={'lg'}
+          boxShadow={'lg'}
+        >
+          Halooo
+        </Box>
+        <Box
+          maxW={'500px'}
+          m={'auto'}
+          p={'2rem'}
+          bgColor={'blue.100'}
+          rounded={'lg'}
+          boxShadow={'lg'}
+        >
+          Halooo
+        </Box>
+        <Button
+          as="a"
+          target="_blank"
+          variant="outline"
+          href="https://chakra-ui.com"
+        >
+          Hello
+        </Button>
+        {/* sx Props */}
+        <Image
+          src="http://placekitten.com/200/300"
+          alt="a kitten"
+          sx={{ filter: 'blur(8px)' }}
+        />
+        {/* Component Factory */}
+        <Heading />
+        {/* Themeable */}
+        <Text color="pinkPong.100" fontSize={'xl'}>
+          {' '}
+          Halo from themeable{' '}
+        </Text>
+        {/* Composable */}
+        <HStack mb="4">
+          <Button variant="white" size="md">
+            Style
+          </Button>
+          <Button> Style Default </Button>
+          {/* Composable Component, not part of Chakra UI */}
+        </HStack>
+        <HStack>
+          <Card>
+            <Image src="http://placekitten.com/200/300" alt="a kitten" mb="4" />
+            <Text fontSize="2xl" color="pakgreen.500">
+              {' '}
+              This is cat
+            </Text>
+          </Card>
+        </HStack>
+        <Box h="300px" w="300px" bg={bgColor}>
+          Box base on color mode
         </Box>
       </main>
     </>
