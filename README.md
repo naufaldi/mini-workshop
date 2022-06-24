@@ -20,6 +20,10 @@ Install mini-workshop with npm
 
 - [CRED's neoPOP UI Kit](https://www.figma.com/community/file/1118043778634755120)
 
+## Other Dependencies
+
+- [Fonts](https://fontsource.org/)
+
 ## Authors
 
 - [@naufaldi](https://www.github.com/naufaldi)

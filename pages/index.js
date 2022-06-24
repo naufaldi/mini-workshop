@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 import Head from 'next/head'
 import Card from '../components/Card'
+import CardProduct from '../components/CardProduct'
 import Heading from '../components/Heading'
 
 export default function Home() {
@@ -95,6 +96,7 @@ export default function Home() {
         />
         {/* Component Factory */}
         <Heading />
+        <CardProduct />
         {/* Themeable */}
         <Text color="pinkPong.100" fontSize={'xl'}>
           {' '}
